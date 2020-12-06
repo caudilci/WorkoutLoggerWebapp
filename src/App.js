@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Button from 'react-bootstrap/Button'
+// import './App.css';
 
+// Material Imports
+import Button from '@material-ui/core/Button';
+
+
+// Firebase Imports
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -11,6 +14,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import { firebaseConfig } from './models/FirebaseConfig';
 
+// Firebase Setup
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
@@ -40,11 +44,15 @@ function SignIn() {
   }
 
   return (
-    <Button variant="primary" onClick={signInWithGoogle}>Sign in With Google</Button>
+    <Button variant="contained" color="primary" onClick={signInWithGoogle}>Sign in With Google</Button>
   );
 }
 
 function Home() {
+  return (
+
+    <Button variant="contained" color="primary">Log Exercise</Button>
+  );
 
 }
 
